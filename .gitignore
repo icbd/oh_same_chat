@@ -1,0 +1,8 @@
+.idea/
+
+
+log/
+!log/.keep
+tmp/
+!tmp/.keep
+

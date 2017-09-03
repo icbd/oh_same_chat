@@ -1,0 +1,32 @@
+---
+rackup: app/run.rb   #Load a Rack config file instead of Rack adapter
+#no-epoll: true   #Disable the use of epoll
+daemonize: true   #Run daemonized in the background
+#user: www-data   #User to run daemon as (use with -g)
+#group: www-data    #Group to run daemon as (use with -u)
+#ssl: true    #Enables SSL
+#ssl-key-file: path   #Path to private key
+#ssl-cert-file: path    #Path to certificate
+#ssl-disable-verify: boolen   #Disables (optional) client cert requests
+address: 0.0.0.0    #bind to HOST address (default: 0.0.0.0)
+port: 3333    #use PORT (default: 3000)
+pid: tmp/pids/thin.pid    #File to store PID (default: tmp/pids/thin.pid)
+timeout: 30   #Request or command timeout in sec (default: 30)
+wait: 30    #Maximum wait time for server to be started in seconds (use with -O)
+log: log/thin.log   #File to redirect output (default: /home/robert/log/thin.log)
+max_conns: 1024   #Maximum number of open file descriptors (default: 1024)Might require sudo to set higher than 1024
+require: []   #require the library
+environment: production   #Framework environment (default: development)
+#prefix: PATH  #Mount the app under PATH (start with /)
+max_persistent_conns: 512   #Maximum number of persistent connections(default: 100)
+servers: 1    #Number of servers to start
+#only: num    #Send command to only one server of the cluster
+#onebyone: true   #Restart the cluster one by one (only works with restart command)
+threaded: true    #Call the Rack application in threads [experimental]
+threadpool-size: 20   #Sets the size of the EventMachine threadpool.(default: 20)
+socket: tmp/sockets/thin.sock   #bind to unix domain socket
+#chdir: /path/to/your/apps/root   #Change to dir before starting
+#stats: PATH    #Mount the Stats adapter under PATH
+tag: thin_web_server aux    # Additional text to display in process listing
+#swiftiply: [KEY]   #Run using swiftiply
+#adapter: name    #Rack adapter to use (default: autodetect)
